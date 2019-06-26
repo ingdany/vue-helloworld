@@ -6,12 +6,13 @@ pipelines:
  default:
    - step:       
        script:
-         - git filter-branch -- --all
-         - git push -f https://heroku:4339367b-b5d6-44df-a27b-72b5c2a078e6@git.heroku.com/dany-test-dev.git
+         - echo "Nothing to deploy in default"
  branches:
+   master:
+     - step:
+         script:
+           - echo "Deploy to dany-test-stg"
    dev:
      - step:       
          script:
-           - git filter-branch -- --all
-           - git push -f https://heroku:4339367b-b5d6-44df-a27b-72b5c2a078e6@git.heroku.com/dany-test-dev.git
-
+           - echo "Deploy to dany-test-dev"
